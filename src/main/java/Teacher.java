@@ -31,7 +31,11 @@ public class Teacher {
        return salary;
    }
 
-   public void receiveSalary(){
+    public int getId() {
+        return id;
+    }
+
+    public void receiveSalary(){
         salaryEarned +=salary;
         School.updateTotalMoneySpent(salary);
    }
