@@ -3,36 +3,6 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
 
-        //show how to call methods from classes
-
-        //7.pay fees for a student with student id ,8.get balance
-        /*
-
-
-
-        System.out.println(karina.getGrade());
-
-        System.out.println(karina.getFeesPaid());
-
-        nyu.addStudents(karina);
-        nyu.addStudents(maija);
-        for (Student students : nyu.getStudens() ){
-            System.out.println("Student name: " + students.getName());
-        }
-
-
-        System.out.println( "Total money earned by NYU is:  " + nyu.getTotalMoneyEarned());
-        Teacher Anda = new Teacher(45,"Anda",200);
-        Teacher Indra = new Teacher(44,"Indra",400);
-        Anda.receiveSalary();
-        Indra.receiveSalary();
-        System.out.println("Total salary received by Anda "   +    Anda.getSalaryEarned());
-        System.out.println("Money spent by school  " +nyu.getTotalMoneySpent());
-        System.out.println("school balance  is " +(nyu.getTotalMoneyEarned()-nyu.getTotalMoneySpent()));
-        System.out.println("school balance  is " + nyu.getBalance());
-
-        //create method in school class that returns balance of the school "getBalance "
-        */
         School nyu = new School();
         Scanner scanner = new Scanner(System.in);
         String userInput = "";
@@ -76,7 +46,7 @@ public class main {
                         break;
                     }
                     System.out.println("Add student name:  ");
-                    String student_name = scanner.nextLine();
+                    String student_name = scanner.nextLine();git
                     System.out.println("Add student grade:  ");
                     try {
                         student_grade=Integer.parseInt(scanner.nextLine());
@@ -132,9 +102,15 @@ public class main {
                     int fees = scanner.nextInt();
                     for (Student students : nyu.getStudens() ) {
                         if(students.getId() ==stud_id) {
-                            Student student1 = new Student(students.getId() , students.getName() ,students.getGrade());
-                            student1.payFees(fees);
+                            students.payFees(fees);
                         }
+                    }
+
+                    for (Student students : nyu.getStudens() )
+                    {
+                        System.out.println("   Student id :  " + students.getId() + "  Student name: " +
+                                students.getName() + "   Students grade:  " + students.getGrade() +
+                                "   Students fees paid:  " + students.getFeesPaid());
                     }
                     break;
                 case "8":
